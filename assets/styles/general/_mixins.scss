@@ -1,15 +1,15 @@
 @each $i in $mar-pad {
   .mt-#{$i} {
-    margin-top: #{$i}rem;
+    margin-top: #{$i/3}rem;
   }
   .mb-#{$i} {
-    margin-bottom: #{$i}rem;
+    margin-bottom: #{$i/3}rem;
   }
   .ml-#{$i} {
-    margin-left: #{$i}rem;
+    margin-left: #{$i/3}rem;
   }
   .mr-#{$i} {
-    margin-right: #{$i}rem;
+    margin-right: #{$i/3}rem;
   }
   .mx-#{$i} {
     @extend .mr-#{$i}, .ml-#{$i};
@@ -22,16 +22,16 @@
   }
 
   .pt-#{$i} {
-    padding-top: #{$i}rem;
+    padding-top: #{$i/3}rem;
   }
   .pb-#{$i} {
-    padding-bottom: #{$i}rem;
+    padding-bottom: #{$i/3}rem;
   }
   .pl-#{$i} {
-    padding-left: #{$i}rem;
+    padding-left: #{$i/3}rem;
   }
   .pr-#{$i} {
-    padding-right: #{$i}rem;
+    padding-right: #{$i/3}rem;
   }
   .px-#{$i} {
     @extend .pr-#{$i}, .pl-#{$i};
