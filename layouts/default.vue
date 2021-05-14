@@ -5,15 +5,19 @@
     <footer>
       <SocialIcons />
     </footer>
+    <client-only>
+      <Particles class="particles"></Particles>
+    </client-only>
   </div>
 </template>
 
 <script>
+import Particles from '@/components/Particles'
 import NavBar from '@/components/NavBar'
 import SocialIcons from '@/components/SocialIcons'
 
 export default {
-  components: { NavBar, SocialIcons },
+  components: { NavBar, SocialIcons, Particles },
   head() {
     return {
       title: 'Hello',
@@ -36,6 +40,5 @@ export default {
 .def-layout {
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(45deg, #171717, #242424);
 }
 </style>
