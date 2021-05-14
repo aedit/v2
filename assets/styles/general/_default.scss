@@ -9,6 +9,7 @@ html {
   box-sizing: border-box;
   height: 100%;
   width: 100%;
+  color: map-get($color-map, secondary);
 }
 
 body {

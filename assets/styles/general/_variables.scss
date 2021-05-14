@@ -1,7 +1,9 @@
 :root {
-  --theme: #ffca83;
+  --primary: #ffca83;
+  --secondary: #ffffff;
 }
 
 $color-map: (
-  theme: var(--theme),
+  primary: var(--primary),
+  secondary: var(--secondary),
 );

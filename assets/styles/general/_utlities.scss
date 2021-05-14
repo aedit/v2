@@ -1,11 +1,11 @@
-.color-theme {
-  color: map-get($color-map, theme);
+.color-primary {
+  color: map-get($color-map, primary);
 }
 
-.bg-theme {
-  background-color: map-get($color-map, theme);
+.bg-primary {
+  background-color: map-get($color-map, primary);
 }
 
-.bc-theme {
-  border-color: map-get($color-map, theme);
+.bc-primary {
+  border-color: map-get($color-map, primary);
 }
