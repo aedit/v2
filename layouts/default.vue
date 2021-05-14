@@ -1,5 +1,5 @@
 <template>
-  <div class="main-layout">
+  <div class="def-layout">
     <NavBar />
     <Nuxt />
     <footer>
@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style lang="scss">
-.main-layout {
+.def-layout {
   height: 100%;
   width: 100%;
   background-image: linear-gradient(45deg, #171717, #242424);
