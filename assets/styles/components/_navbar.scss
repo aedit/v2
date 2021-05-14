@@ -1,0 +1,17 @@
+.nav-bar {
+  justify-content: space-between;
+  padding: 2rem 4rem;
+  .nav-bar__links {
+    gap: 2.5rem;
+    li {
+      &:hover {
+        border-bottom: 1px solid map-get($color-map, primary);
+      }
+      a {
+        &.nuxt-link-exact-active {
+          color: map-get($color-map, primary);
+        }
+      }
+    }
+  }
+}
