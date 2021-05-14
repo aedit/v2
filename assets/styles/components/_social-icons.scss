@@ -1,0 +1,14 @@
+.social-icons {
+  position: fixed;
+  bottom: 2rem;
+  right: 4rem;
+  gap: 2rem;
+
+  li {
+    a {
+      &:hover {
+        color: map-get($color-map, primary);
+      }
+    }
+  }
+}

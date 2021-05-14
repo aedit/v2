@@ -1,11 +1,19 @@
 <template>
   <div class="main-layout">
+    <NavBar />
     <Nuxt />
+    <footer>
+      <SocialIcons />
+    </footer>
   </div>
 </template>
 
 <script>
+import NavBar from '@/components/NavBar'
+import SocialIcons from '@/components/SocialIcons'
+
 export default {
+  components: { NavBar, SocialIcons },
   head() {
     return {
       title: 'Hello',
