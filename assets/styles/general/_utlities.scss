@@ -10,6 +10,10 @@
   border-color: map-get($color-map, primary);
 }
 
+.border-primary {
+  border: 1px solid map-get($color-map, primary);
+}
+
 .fw-400 {
   font-weight: 400;
 }
