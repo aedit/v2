@@ -10,6 +10,10 @@
         Let's Talk
       </button>
     </div>
-    <img class="home__image" src="https://unsplash.it/500" alt="" />
+    <img
+      class="home__image"
+      src="@/assets/images/main.png"
+      alt="Main Page Image"
+    />
   </main>
 </template>
