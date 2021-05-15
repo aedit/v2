@@ -8,8 +8,16 @@
   .nav-bar__links {
     gap: 2.5rem;
     li {
-      &:hover {
-        border-bottom: 1px solid map-get($color-map, primary);
+      &::after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 0%;
+        background: map-get($color-map, primary);
+        transition: width 0.5s ease;
+      }
+      &:hover::after {
+        width: 100%;
       }
       a {
         &.nuxt-link-exact-active {
