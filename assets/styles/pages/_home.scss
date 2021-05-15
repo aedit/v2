@@ -15,7 +15,7 @@
 
     &__action {
       align-self: flex-start;
-      transition: all 0.3s ease-in-out;
+
       &:hover {
         border-color: map-get($color-map, secondary);
       }
