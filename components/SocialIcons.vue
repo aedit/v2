@@ -1,6 +1,6 @@
 <template>
   <ul class="social-icons d-flex" :class="className">
-    <li v-for="item in list" :key="item.name">
+    <li v-for="item in iconsList" :key="item.name">
       <a :href="item.link" target="_blank">
         <i :class="'icon-' + item.name"></i>
       </a>
@@ -38,6 +38,11 @@ export default {
   computed: {
     className() {
       return this.$route.path === '/contact' ? 'enlarge' : ''
+    },
+    iconsList() {
+      return this.$route.path === '/contact'
+        ? [{ name: 'mail', link: 'mailto:udisen97@gmail.com' }, ...this.list]
+        : this.list
     },
   },
 }
