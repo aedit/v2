@@ -1,6 +1,6 @@
 <template>
   <div class="contact">
-    <form action="" class="contact__form" autocomplete="off">
+    <form class="contact__form" autocomplete="off" @submit="call">
       <div class="contact__form__input mb-6">
         <input
           v-model="contactName"
@@ -28,10 +28,17 @@
         ></textarea>
       </div>
       <div class="contact__form__actions d-flex">
-        <button class="border-primary px-9 py-1 rounded fw-400 mr-3">
+        <button
+          id="submit"
+          class="border-primary px-9 py-1 rounded fw-400 mr-3"
+        >
           Send
         </button>
-        <button class="border-primary px-9 py-1 rounded fw-400 d-flex-center">
+        <button
+          type="button"
+          class="border-primary px-9 py-1 rounded fw-400 d-flex-center"
+          @click="sendWhatsappMessage"
+        >
           <i class="icon-whatsapp mr-2"></i> Whatsapp
         </button>
       </div>
@@ -47,6 +54,23 @@ export default {
       contactEmail: '',
       contactMessage: '',
     }
+  },
+  methods: {
+    call(evt) {
+      evt.preventDefault()
+    },
+    prepareMessage() {
+      let message = 'Hi Udit,\n'
+      if (this.contactName.length) message += `I am ${this.contactName},\n\n`
+      if (this.contactMessage) message += this.contactMessage + '\n'
+      if (this.contactEmail)
+        message += `You can contact me on ${this.contactEmail}`
+      return encodeURI(message)
+    },
+    sendWhatsappMessage() {
+      const message = this.prepareMessage()
+      window.open(`https://wa.me/919826942288?text=${message}`, '_blank')
+    },
   },
 }
 </script>

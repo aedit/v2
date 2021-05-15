@@ -18,8 +18,8 @@
         display: block;
         height: 2px;
         width: 0%;
-        background: white;
-        transition: width 0.5s ease, background-color 0.5s ease;
+        background: map-get($color-map, secondary);
+        transition: width 0.8s ease, background-color 0.5s ease;
       }
       &:hover {
         border-color: transparent;
