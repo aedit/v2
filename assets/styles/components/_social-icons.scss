@@ -3,6 +3,8 @@
   bottom: 2rem;
   right: 4rem;
   gap: 2rem;
+  font-size: 1.5rem;
+  transition: all 0.5s ease-in;
 
   li {
     a {
@@ -10,5 +12,10 @@
         color: map-get($color-map, primary);
       }
     }
+  }
+  &.enlarge {
+    font-size: 2.5rem;
+    right: 15%;
+    bottom: 50%;
   }
 }

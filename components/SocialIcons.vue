@@ -1,5 +1,5 @@
 <template>
-  <ul class="social-icons d-flex">
+  <ul class="social-icons d-flex" :class="className">
     <li>
       <a href="https://facebook.com/udit.sen1" target="_blank">
         <i class="icon icon-facebook"></i>
@@ -27,3 +27,12 @@
     </li>
   </ul>
 </template>
+<script>
+export default {
+  computed: {
+    className() {
+      return this.$route.path === '/contact' ? 'enlarge' : ''
+    },
+  },
+}
+</script>
