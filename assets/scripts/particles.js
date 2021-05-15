@@ -20,7 +20,7 @@ export default {
     line_linked: {
       enable: false,
       distance: 150,
-      color: '#c0c0c0',
+      color: '#999999',
       opacity: 0.4,
       width: 1,
     },
