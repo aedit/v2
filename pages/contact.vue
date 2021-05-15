@@ -43,6 +43,13 @@
         </button>
       </div>
     </form>
+    <div class="contact__content">
+      <h1 class="color-primary">Let's get in touch!</h1>
+      <h3 class="px-9 mt-3 fw-400">
+        You can fill the form, hit send or whatsapp me. Also, you can reach me
+        out on the below social links.
+      </h3>
+    </div>
   </div>
 </template>
 
