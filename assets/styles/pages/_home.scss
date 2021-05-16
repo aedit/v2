@@ -14,9 +14,7 @@
     }
 
     &__action {
-      align-self: flex-start;
-
-      &:hover {
+      button:hover {
         border-color: map-get($color-map, secondary);
       }
     }
