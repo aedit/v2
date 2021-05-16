@@ -6,9 +6,9 @@
       </NuxtLink>
     </span>
     <ul class="nav-bar__links d-flex">
-      <li><NuxtLink to="/"> Home</NuxtLink></li>
+      <li><NuxtLink class="home-link" to="/"> Home</NuxtLink></li>
       <li><NuxtLink to="/about"> About</NuxtLink></li>
-      <li><NuxtLink to="/portfolio"> Work</NuxtLink></li>
+      <li><NuxtLink to="/projects"> Projects</NuxtLink></li>
       <li><NuxtLink to="/contact"> Contact</NuxtLink></li>
     </ul>
   </nav>

@@ -20,7 +20,10 @@
         width: 100%;
       }
       a {
-        &.nuxt-link-exact-active {
+        &.nuxt-link-active:not(.home-link) {
+          color: map-get($color-map, primary);
+        }
+        &.home-link.nuxt-link-exact-active {
           color: map-get($color-map, primary);
         }
       }
