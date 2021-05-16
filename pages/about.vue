@@ -2,12 +2,7 @@
   <div class="about">
     <div class="about__links">
       <ul ref="links-list">
-        <li
-          v-for="(item, index) in childLinks"
-          :key="index"
-          :ref="item.ref"
-          @click="moveIndicator(item.ref)"
-        >
+        <li v-for="(item, index) in childLinks" :key="index" :ref="item.ref">
           <NuxtLink :to="item.route">{{ item.title }}</NuxtLink>
         </li>
 
@@ -51,14 +46,15 @@ export default {
       ],
     }
   },
+  watch: {
+    $route() {
+      this.$nextTick(() => this.resetIndicator())
+    },
+  },
   mounted() {
     this.resetIndicator()
   },
   methods: {
-    moveIndicator(ref) {
-      this.$refs['selected-indicator'].style.top =
-        this.$refs[ref][0].offsetTop + 'px'
-    },
     resetIndicator() {
       const selectedIndicatorStyle = this.$refs['selected-indicator'].style
       const parentElement = this.$el.querySelector(
