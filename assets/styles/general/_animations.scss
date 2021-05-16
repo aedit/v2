@@ -9,5 +9,15 @@
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
-  transform: scale(0.9);
+  transform: scale(0.8);
+}
+
+.about-child-enter-active,
+.about-child-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.about-child-enter-from,
+.about-child-leave-to {
+  opacity: 0;
 }

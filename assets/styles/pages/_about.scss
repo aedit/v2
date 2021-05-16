@@ -61,11 +61,10 @@
   &__content {
     flex: 1;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__route {
-    flex: 1;
+    overflow: hidden;
+    &__route {
+      height: 100%;
+      border: 1px solid white;
+    }
   }
 }

@@ -18,7 +18,9 @@
       </button>
     </div>
     <div class="about__content">
-      <router-view class="about__route"></router-view>
+      <transition name="about-child">
+        <router-view class="about__content__route"></router-view>
+      </transition>
     </div>
   </div>
 </template>
