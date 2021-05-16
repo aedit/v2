@@ -1,10 +1,17 @@
 <template>
   <div class="about">
     <div class="about__links">
-      <ul>
-        <NuxtLink to="/about"><li>Me</li></NuxtLink>
-        <NuxtLink to="/about/work"><li>Work</li></NuxtLink>
-        <NuxtLink to="/about/skills"><li>Skills</li></NuxtLink>
+      <ul ref="links-list">
+        <li
+          v-for="(item, index) in childLinks"
+          :key="index"
+          :ref="item.ref"
+          @click="moveIndicator(item.ref)"
+        >
+          <NuxtLink :to="item.route">{{ item.title }}</NuxtLink>
+        </li>
+
+        <span ref="selected-indicator" class="selected-indicator"></span>
       </ul>
       <button
         class="download-resume pointer px-6 py-1 rounded fw-400 border-primary"
@@ -23,7 +30,43 @@
 
 <script>
 export default {
+  data() {
+    return {
+      childLinks: [
+        {
+          ref: 'about-me',
+          route: '/about',
+          title: 'Me',
+        },
+        {
+          ref: 'about-work',
+          route: '/about/work',
+          title: 'Work',
+        },
+        {
+          ref: 'about-skills',
+          route: '/about/skills',
+          title: 'Skills',
+        },
+      ],
+    }
+  },
+  mounted() {
+    this.resetIndicator()
+  },
   methods: {
+    moveIndicator(ref) {
+      this.$refs['selected-indicator'].style.top =
+        this.$refs[ref][0].offsetTop + 'px'
+    },
+    resetIndicator() {
+      const selectedIndicatorStyle = this.$refs['selected-indicator'].style
+      const parentElement = this.$el.querySelector(
+        '.nuxt-link-exact-active'
+      ).parentElement
+      selectedIndicatorStyle.top = parentElement.offsetTop + 'px'
+      selectedIndicatorStyle.height = parentElement.clientHeight + 'px'
+    },
     openResume() {
       window.open('/resume.pdf', '_blank')
     },
