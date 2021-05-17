@@ -3,10 +3,14 @@
   top: 0;
   left: 0;
   right: 0;
+  display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 2rem 4rem;
   .nav-bar__links {
     gap: 2.5rem;
+    display: flex;
+    align-items: center;
     li {
       &::after {
         content: '';
@@ -26,6 +30,16 @@
         &.home-link.nuxt-link-exact-active {
           color: map-get($color-map, primary);
         }
+      }
+    }
+
+    .download-resume {
+      i {
+        display: inline-block;
+        transform: rotate(180deg);
+      }
+      &:hover {
+        color: map-get($color-map, primary);
       }
     }
   }

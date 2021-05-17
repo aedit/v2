@@ -8,14 +8,6 @@
 
         <span ref="selected-indicator" class="selected-indicator"></span>
       </ul>
-      <button
-        class="download-resume pointer px-6 py-1 rounded fw-400 border-primary"
-        @click="openResume"
-      >
-        <i class="icon-arrow-up"></i>
-
-        Resume
-      </button>
     </div>
     <div class="about__content">
       <transition name="about-child">
@@ -64,9 +56,6 @@ export default {
       ).parentElement
       selectedIndicatorStyle.top = parentElement.offsetTop + 'px'
       selectedIndicatorStyle.height = parentElement.clientHeight + 'px'
-    },
-    openResume() {
-      window.open('/resume.pdf', '_blank')
     },
   },
 }

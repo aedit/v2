@@ -45,17 +45,6 @@
         transition: 0.2s ease top;
       }
     }
-
-    .download-resume {
-      align-self: flex-end;
-      i {
-        display: inline-block;
-        transform: rotate(180deg);
-      }
-      &:hover {
-        color: map-get($color-map, primary);
-      }
-    }
   }
 
   &__content {
