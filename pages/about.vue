@@ -1,62 +1,19 @@
 <template>
   <div class="about">
-    <div class="about__links">
-      <ul ref="links-list">
-        <li v-for="(item, index) in childLinks" :key="index" :ref="item.ref">
-          <NuxtLink :to="item.route">{{ item.title }}</NuxtLink>
-        </li>
-
-        <span ref="selected-indicator" class="selected-indicator"></span>
-      </ul>
-    </div>
-    <div class="about__content">
-      <transition name="about-child">
-        <router-view class="about__content__route"></router-view>
-      </transition>
-    </div>
+    THello! My name is Udit, and I am a Web Developer. The first time I took an
+    interest in the screens on the browser, was in 2010. I started experimenting
+    things by 2018 and started taking it seriously since 2020. My major focus
+    has always been UI Development, and recently I have started devoting some
+    time to the backend side of the web. Currently, I work as a fulltime
+    Software Engineer at Cyware Labs, where I develop the frontend of company's
+    products. I love to take out some time to invest in open source projects,
+    some exciting projects of mine and helping fellow developers around me.
+    <br />
+    Shows I love: Black Mirror, Bojack Horseman, Dark, Love, Death and Robots,
+    Mindhunter, The Boys <br />
+    Music I listen to: Prateek Kuhad, Anuv Jain,
+    <br />
+    Check out my writings here at: agreyguy.wordpress.com
+    <br />
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      childLinks: [
-        {
-          ref: 'about-me',
-          route: '/about',
-          title: 'Me',
-        },
-        {
-          ref: 'about-work',
-          route: '/about/work',
-          title: 'Work',
-        },
-        {
-          ref: 'about-skills',
-          route: '/about/skills',
-          title: 'Skills',
-        },
-      ],
-    }
-  },
-  watch: {
-    $route() {
-      this.$nextTick(() => this.resetIndicator())
-    },
-  },
-  mounted() {
-    this.resetIndicator()
-  },
-  methods: {
-    resetIndicator() {
-      const selectedIndicatorStyle = this.$refs['selected-indicator'].style
-      const parentElement = this.$el.querySelector(
-        '.nuxt-link-exact-active'
-      ).parentElement
-      selectedIndicatorStyle.top = parentElement.offsetTop + 'px'
-      selectedIndicatorStyle.height = parentElement.clientHeight + 'px'
-    },
-  },
-}
-</script>
