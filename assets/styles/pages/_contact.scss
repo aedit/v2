@@ -57,7 +57,8 @@
 
     &__actions {
       button {
-        &:hover {
+        &:hover,
+        &:focus {
           color: map-get($color-map, primary);
           border-color: map-get($color-map, secondary);
         }
