@@ -1,15 +1,45 @@
 <template>
   <div class="projects">
     <div class="projects__container">
-      <template v-for="i in 10">
-        <div
-          :id="i === 1 ? 'active' : ''"
-          :key="'container' + i"
-          class="image-container"
+      <template v-for="(project, index) in projects">
+        <section
+          :key="'container' + index"
+          class="project-card"
+          :class="{ left: index % 2 === 0 }"
         >
-          <img src="https://unsplash.it/1024" alt="" />
-        </div>
-        <div v-if="i < 10" :key="'filler' + i" class="filler"></div>
+          <div class="project-card__content">
+            <div class="content__image-container">
+              <div class="content__image-container__middle">
+                <div class="image-overlay"></div>
+                <img :src="project.image" alt="" />
+              </div>
+            </div>
+            <article class="content__text-container">
+              <h1 class="content__text-container--head color-primary mb-5">
+                <span class="color-secondary"> 0{{ index }}</span>
+                <span
+                  class="color-secondary"
+                  :class="{ 'mr-2': index % 2 == 0, 'ml-2': index % 2 !== 0 }"
+                  >.</span
+                >
+                {{ project.title }}
+              </h1>
+              <p class="content__text-container--description mb-4">
+                {{ project.description }}
+              </p>
+              <div class="content__text-container--tech mb-3 color-primary">
+                <span v-for="(tech, i) in project.techs" :key="i">
+                  {{ tech }}
+                </span>
+              </div>
+              <div class="content__text-container--actions">
+                <i class="icon-github"></i>
+                <i class="icon-github"></i>
+              </div>
+            </article>
+          </div>
+        </section>
+        <div v-if="i < 10" :key="'filler' + index" class="filler"></div>
       </template>
     </div>
   </div>
@@ -17,6 +47,124 @@
 
 <script>
 export default {
+  data() {
+    return {
+      projects: [
+        {
+          title: 'lorem Ipsum Dolor Amser',
+          image: 'https://unsplash.it/1536/864',
+          description:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, nisi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, asperiores!',
+          techs: [
+            'Spotify Web API',
+            'Firebase',
+            'Next,js',
+            'Nuxt.js',
+            'Vue',
+            'Google Developer Tools',
+          ],
+          githubURL: 'https://github.com/aedit',
+          projectURL: 'https://aedit.github.io/old-portfolio',
+        },
+        {
+          title: 'lorem Ipsum Dolor Amser',
+          image: 'https://unsplash.it/1536/864',
+          description:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, nisi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, asperiores!',
+          techs: [
+            'Spotify Web API',
+            'Firebase',
+            'Next,js',
+            'Nuxt.js',
+            'Vue',
+            'Google Developer Tools',
+          ],
+          githubURL: 'https://github.com/aedit',
+          projectURL: 'https://aedit.github.io/old-portfolio',
+        },
+        {
+          title: 'lorem Ipsum Dolor Amser',
+          image: 'https://unsplash.it/1536/864',
+          description:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, nisi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, asperiores!',
+          techs: [
+            'Spotify Web API',
+            'Firebase',
+            'Next,js',
+            'Nuxt.js',
+            'Vue',
+            'Google Developer Tools',
+          ],
+          githubURL: 'https://github.com/aedit',
+          projectURL: 'https://aedit.github.io/old-portfolio',
+        },
+        {
+          title: 'lorem Ipsum Dolor Amser',
+          image: 'https://unsplash.it/1536/864',
+          description:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, nisi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, asperiores!',
+          techs: [
+            'Spotify Web API',
+            'Firebase',
+            'Next,js',
+            'Nuxt.js',
+            'Vue',
+            'Google Developer Tools',
+          ],
+          githubURL: 'https://github.com/aedit',
+          projectURL: 'https://aedit.github.io/old-portfolio',
+        },
+        {
+          title: 'lorem Ipsum Dolor Amser',
+          image: 'https://unsplash.it/1536/864',
+          description:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, nisi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, asperiores!',
+          techs: [
+            'Spotify Web API',
+            'Firebase',
+            'Next,js',
+            'Nuxt.js',
+            'Vue',
+            'Google Developer Tools',
+          ],
+          githubURL: 'https://github.com/aedit',
+          projectURL: 'https://aedit.github.io/old-portfolio',
+        },
+        {
+          title: 'lorem Ipsum Dolor Amser',
+          image: 'https://unsplash.it/1536/864',
+          description:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, nisi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, asperiores!',
+          techs: [
+            'Spotify Web API',
+            'Firebase',
+            'Next,js',
+            'Nuxt.js',
+            'Vue',
+            'Google Developer Tools',
+          ],
+          githubURL: 'https://github.com/aedit',
+          projectURL: 'https://aedit.github.io/old-portfolio',
+        },
+        {
+          title: 'lorem Ipsum Dolor Amser',
+          image: 'https://unsplash.it/1536/864',
+          description:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, nisi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, asperiores!',
+          techs: [
+            'Spotify Web API',
+            'Firebase',
+            'Next,js',
+            'Nuxt.js',
+            'Vue',
+            'Google Developer Tools',
+          ],
+          githubURL: 'https://github.com/aedit',
+          projectURL: 'https://aedit.github.io/old-portfolio',
+        },
+      ],
+    }
+  },
   methods: {
     // enter(event) {
     //   console.log(event)

@@ -2,6 +2,10 @@
   color: map-get($color-map, primary);
 }
 
+.color-secondary {
+  color: map-get($color-map, secondary);
+}
+
 .bg-primary {
   background-color: map-get($color-map, primary);
 }
