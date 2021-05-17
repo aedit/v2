@@ -1,5 +1,5 @@
 <template>
-  <main class="home">
+  <main class="home" @mousewheel="changeRoute">
     <div class="home__content">
       <h2 class="color-primary fw-400">Hello, I'm a</h2>
       <h1 class="home__content__head">Front-End Web Developer</h1>
@@ -20,3 +20,10 @@
     />
   </main>
 </template>
+
+<script>
+import changeRouteOnScrollMixin from '~/changeRouteOnScrollMixin'
+export default {
+  mixins: [changeRouteOnScrollMixin],
+}
+</script>
