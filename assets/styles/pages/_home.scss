@@ -9,8 +9,13 @@
     flex-direction: column;
     justify-content: center;
 
-    &__head {
+    &__name {
       font-size: 3rem;
+    }
+
+    &__head {
+      opacity: 0.9;
+      font-size: 2rem;
     }
 
     &__action {

@@ -1,12 +1,14 @@
 <template>
   <main class="home" @mousewheel="changeRoute">
     <div class="home__content">
-      <h2 class="color-primary fw-400">Hello, I'm a</h2>
-      <h1 class="home__content__head">Front-End Web Developer</h1>
-      <h4 class="mb-6 fw-400">with 1 year of experience</h4>
+      <h2 class="fw-400">Hello, I'm</h2>
+      <h1 class="color-primary home__content__name">Udit Sen</h1>
+      <h2 class="home__content__head mb-6 color-primary">
+        I create pages for the web!
+      </h2>
       <div class="home__content__action">
         <button class="border-primary px-9 py-1 rounded fw-400 mr-2">
-          Let's Talk
+          Say hello
         </button>
         <button class="border-primary px-6 py-1 rounded fw-400">
           Buy Me a coffee
