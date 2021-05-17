@@ -39,7 +39,11 @@
             </article>
           </div>
         </section>
-        <div v-if="i < 10" :key="'filler' + index" class="filler"></div>
+        <div
+          v-if="index < projects.length - 1"
+          :key="'filler' + index"
+          class="filler"
+        ></div>
       </template>
     </div>
   </div>
