@@ -10,27 +10,30 @@
   .nav-bar__links {
     gap: 2.5rem;
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    position: relative;
     li {
-      &::after {
-        content: '';
-        display: block;
-        height: 2px;
-        width: 0%;
-        background: map-get($color-map, primary);
-        transition: width 0.5s ease;
-      }
-      &:hover::after {
-        width: 100%;
-      }
+      display: flex;
+      align-items: stretch;
       a {
-        &.nuxt-link-active:not(.home-link) {
-          color: map-get($color-map, primary);
-        }
-        &.home-link.nuxt-link-exact-active {
+        display: inline-flex;
+        align-items: center;
+        line-height: normal;
+        &.nuxt-link-exact-active {
           color: map-get($color-map, primary);
         }
       }
+    }
+
+    .selected-indicator {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 2px;
+      background-color: map-get($color-map, primary);
+      border-radius: 5px;
+      transition: 0.2s ease left;
     }
 
     .download-resume {
