@@ -16,7 +16,7 @@
             </div>
             <article class="content__text-container">
               <h1 class="content__text-container--head color-primary mb-5">
-                <span class="color-secondary"> 0{{ index }}</span>
+                <span class="color-secondary"> 0{{ index + 1 }}</span>
                 <span
                   class="color-secondary"
                   :class="{ 'mr-2': index % 2 == 0, 'ml-2': index % 2 !== 0 }"
