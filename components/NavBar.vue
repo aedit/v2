@@ -38,14 +38,17 @@ export default {
       window.open('/resume.pdf', '_blank')
     },
     resetIndicator() {
-      const selectedIndicatorStyle = this.$refs['selected-indicator'].style
+      const selectedIndicator = this.$refs['selected-indicator']
+      const currentLeft = selectedIndicator.offsetLeft
       const parentElement = this.$el.querySelector(
         '.nav-bar__links .nuxt-link-exact-active'
       ).parentElement
       const offsetLeft = parentElement.offsetLeft
       const clientWidth = parentElement.clientWidth
-      selectedIndicatorStyle.left = offsetLeft + 'px'
-      selectedIndicatorStyle.width = clientWidth + 'px'
+      const relocation = Math.abs(currentLeft - offsetLeft) / (88 * 4)
+      selectedIndicator.style.transition = `${relocation}s ease left`
+      selectedIndicator.style.left = offsetLeft + 'px'
+      selectedIndicator.style.width = clientWidth + 'px'
     },
   },
 }
