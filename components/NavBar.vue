@@ -19,7 +19,9 @@
 
         Resume
       </button>
-      <span @click="$emit('star')">Starry</span>
+      <span @click="$emit('star')">
+        <input type="checkbox" checked />
+      </span>
     </ul>
   </nav>
 </template>
