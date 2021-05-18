@@ -17,12 +17,7 @@
 </template>
 
 <script>
-import Particles from '@/components/Particles'
-import NavBar from '@/components/NavBar'
-import SocialIcons from '@/components/SocialIcons'
-
 export default {
-  components: { NavBar, SocialIcons, Particles },
   head() {
     return {
       title: 'Hello',
@@ -58,56 +53,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-.def-layout {
-  height: 100%;
-  width: 100%;
-
-  .scroll-down {
-    position: fixed;
-    bottom: 2rem;
-    transform: rotate(-90deg) translate(75%);
-    display: flex;
-    align-items: center;
-
-    .icon-arrow-left {
-      position: absolute;
-      animation: move-down 1.5s infinite;
-      left: -1rem;
-    }
-    @keyframes move-down {
-      0% {
-        transform: translate(0, 0);
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        transform: translate(-20px, 0);
-        opacity: 0;
-      }
-    }
-
-    .icon-arrow-right {
-      position: absolute;
-      animation: move-up 1.5s infinite;
-      right: -1rem;
-    }
-    @keyframes move-up {
-      0% {
-        transform: translate(0, 0);
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        transform: translate(20px, 0);
-        opacity: 0;
-      }
-    }
-  }
-}
-</style>
