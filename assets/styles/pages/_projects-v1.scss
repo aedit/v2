@@ -1,4 +1,4 @@
-.projects {
+.projects-v1 {
   height: 100%;
   width: 100%;
   padding: 5.5rem 0;
@@ -33,15 +33,15 @@
             position: relative;
             display: grid;
             align-items: center;
-
+            transition: filter 0.5s ease-out;
+            filter: grayscale(1);
             img {
               width: 100%;
-              filter: blur(3px) grayscale(100%);
               cursor: pointer;
-              transition: filter 0.5s ease-out;
-              &:hover {
-                filter: none;
-              }
+            }
+
+            &:hover {
+              filter: grayscale(0);
             }
           }
 
