@@ -1,26 +1,54 @@
 export default {
+  data() {
+    return {
+      goNext: () => {},
+    }
+  },
+  mounted() {
+    this.goNext = this.debounce(this.changeRoute, 1000, true)
+  },
   methods: {
     changeRoute(e) {
-      const isDownScroll = e.deltaY > 0
+      const isDownScroll = e.wheelDeltaY < 0
       switch (this.$route.path) {
         case '/':
           isDownScroll && this.$router.push('/about')
           break
-        // case '/about':
-        //   isDownScroll
-        //     ? this.$router.push('/about/work')
-        //     : this.$router.push('/')
-        //   break
-        // case '/about/work':
-        //   isDownScroll
-        //     ? this.$router.push('/about/skills')
-        //     : this.$router.push('/about')
-        //   break
-        // case '/about/skills':
-        //   isDownScroll
-        //     ? this.$router.push('/projects')
-        //     : this.$router.push('/about/work')
-        //   break
+        case '/about':
+          isDownScroll ? this.$router.push('/projects') : this.$router.push('/')
+          break
+      }
+    },
+    debounce_call(func, timeout = 300) {
+      let timer
+      return (...args) => {
+        if (!timer) {
+          func.call(args)
+        }
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+          timer = undefined
+        }, timeout)
+      }
+    },
+    debounce(func, wait = 1000, immediate = true) {
+      let timeout
+      return function executedFunction() {
+        const context = this
+        const args = arguments
+
+        const later = function () {
+          timeout = null
+          if (!immediate) func.apply(context, args)
+        }
+
+        const callNow = immediate && !timeout
+
+        clearTimeout(timeout)
+
+        timeout = setTimeout(later, wait)
+
+        if (callNow) func.apply(context, args)
       }
     },
   },
