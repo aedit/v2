@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import particles from '@/assets/scripts/particles'
+import particles from '@/assets/scripts/particlesv2'
 
 export default {
   mounted() {
