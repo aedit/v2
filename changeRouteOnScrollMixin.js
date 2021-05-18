@@ -17,6 +17,8 @@ export default {
         case '/about':
           isDownScroll ? this.$router.push('/projects') : this.$router.push('/')
           break
+        case '/contact':
+          !isDownScroll && this.$router.push('/projects')
       }
     },
     debounce_call(func, timeout = 300) {

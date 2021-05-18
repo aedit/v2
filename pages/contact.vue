@@ -1,5 +1,5 @@
 <template>
-  <div class="contact">
+  <div class="contact" @mousewheel="goNext">
     <form class="contact__form" autocomplete="off" @submit="call">
       <div class="contact__form__input mb-6">
         <input
@@ -54,7 +54,9 @@
 </template>
 
 <script>
+import changeRouteOnScrollMixin from '~/changeRouteOnScrollMixin'
 export default {
+  mixins: [changeRouteOnScrollMixin],
   data() {
     return {
       contactName: '',

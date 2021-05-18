@@ -1,5 +1,5 @@
 <template>
-  <main class="home" @mousewheel="changeRoute">
+  <main class="home" @mousewheel="goNext">
     <div class="home__content">
       <h2 class="fw-400">Hello, I'm</h2>
       <h1 class="color-primary home__content__name">Udit Sen</h1>
