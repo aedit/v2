@@ -41,8 +41,10 @@ export default {
       const parentElement = this.$el.querySelector(
         '.nav-bar__links .nuxt-link-exact-active'
       ).parentElement
-      selectedIndicatorStyle.left = parentElement.offsetLeft + 'px'
-      selectedIndicatorStyle.width = parentElement.clientWidth + 'px'
+      const offsetLeft = parentElement.offsetLeft
+      const clientWidth = parentElement.clientWidth
+      selectedIndicatorStyle.left = offsetLeft + 'px'
+      selectedIndicatorStyle.width = clientWidth + 'px'
     },
   },
 }
