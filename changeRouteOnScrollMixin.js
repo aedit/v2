@@ -13,10 +13,15 @@ export default {
       switch (this.$route.path) {
         case '/':
           isDownScroll && this.$router.push('/about')
-          break
+          return
         case '/about':
           isDownScroll ? this.$router.push('/projects') : this.$router.push('/')
-          break
+          return
+        case '/projects':
+          isDownScroll
+            ? this.$router.push('/contact')
+            : this.$router.push('/about')
+          return
         case '/contact':
           !isDownScroll && this.$router.push('/projects')
       }
