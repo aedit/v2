@@ -1,6 +1,6 @@
 <template>
-  <div class="def-layout">
-    <NavBar />
+  <div class="def-layout" :class="{ 'no-stars': !stars }">
+    <NavBar @star="stars = !stars" />
     <Nuxt />
     <span class="scroll-down">
       <i v-if="scrollText.down" class="icon-arrow-left mr-2"></i>
@@ -10,7 +10,7 @@
     <footer>
       <SocialIcons />
     </footer>
-    <client-only>
+    <client-only v-if="stars">
       <Particles class="particles"></Particles>
     </client-only>
   </div>
@@ -18,6 +18,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      stars: true,
+    }
+  },
   head() {
     return {
       title: 'Hello',

@@ -19,6 +19,7 @@
 
         Resume
       </button>
+      <span @click="$emit('star')">Starry</span>
     </ul>
   </nav>
 </template>
