@@ -40,9 +40,15 @@ export default {
     resetIndicator() {
       const selectedIndicator = this.$refs['selected-indicator']
       const currentLeft = selectedIndicator.offsetLeft
-      const parentElement = this.$el.querySelector(
-        '.nav-bar__links .nuxt-link-exact-active'
-      ).parentElement
+      const parentElement =
+        this.$el.querySelector('.nav-bar__links .nuxt-link-exact-active') &&
+        this.$el.querySelector('.nav-bar__links .nuxt-link-exact-active')
+          .parentElement
+      if (!parentElement) {
+        selectedIndicator.style.display = 'none'
+        return
+      }
+      selectedIndicator.style.display = 'block'
       const offsetLeft = parentElement.offsetLeft
       const clientWidth = parentElement.clientWidth
       const relocation = Math.abs(currentLeft - offsetLeft) / (88 * 4)
