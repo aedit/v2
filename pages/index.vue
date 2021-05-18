@@ -7,7 +7,10 @@
         I create pages for the web!
       </h2>
       <div class="home__content__action">
-        <button class="border-primary px-9 py-1 rounded fw-400 mr-2">
+        <button
+          class="border-primary px-9 py-1 rounded fw-400 mr-2"
+          @click="$router.push('/contact')"
+        >
           Say hello
         </button>
         <button class="border-primary px-6 py-1 rounded fw-400">
