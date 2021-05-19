@@ -1,5 +1,5 @@
 <template>
-  <div class="about" @mousewheel="goNext">
+  <div class="about" @mousewheel="goNextThrottle">
     THello! My name is Udit, and I am a Web Developer. The first time I took an
     interest in the screens on the browser, was in 2010. I started experimenting
     things by 2018 and started taking it seriously since 2020. My major focus

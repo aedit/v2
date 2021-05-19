@@ -1,5 +1,5 @@
 <template>
-  <div class="contact" @mousewheel="goNext">
+  <div class="contact" @mousewheel="goNextThrottle">
     <form class="contact__form" autocomplete="off" @submit="call">
       <div class="contact__form__input mb-6">
         <input

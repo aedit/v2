@@ -1,5 +1,5 @@
 <template>
-  <div class="projects" @mousewheel="goNext">New Projects Page</div>
+  <div class="projects" @mousewheel="goNextThrottle">New Projects Page</div>
 </template>
 
 <script>

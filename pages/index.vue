@@ -1,5 +1,5 @@
 <template>
-  <main class="home" @mousewheel="goNext">
+  <main class="home" @mousewheel="goNextThrottle">
     <div class="home__content">
       <h2 class="fw-400">Hello, I'm</h2>
       <h1 class="color-primary home__content__name">Udit Sen</h1>
@@ -30,5 +30,10 @@
 import changeRouteOnScrollMixin from '~/changeRouteOnScrollMixin'
 export default {
   mixins: [changeRouteOnScrollMixin],
+  methods: {
+    log(event) {
+      console.log(event)
+    },
+  },
 }
 </script>
