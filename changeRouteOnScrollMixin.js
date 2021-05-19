@@ -2,10 +2,12 @@ export default {
   data() {
     return {
       goNext: () => {},
+      goNextThrottle: () => {},
     }
   },
   mounted() {
-    this.goNext = this.debounce(this.changeRoute, 1000, true)
+    this.goNext = this.debounce(this.changeRoute)
+    this.goNextThrottle = this.throttle(this.changeRoute)
   },
   methods: {
     changeRoute(e) {
@@ -26,18 +28,6 @@ export default {
           !isDownScroll && this.$router.push('/projects')
       }
     },
-    debounce_call(func, timeout = 300) {
-      let timer
-      return (...args) => {
-        if (!timer) {
-          func.call(args)
-        }
-        clearTimeout(timer)
-        timer = setTimeout(() => {
-          timer = undefined
-        }, timeout)
-      }
-    },
     debounce(func, wait = 1000, immediate = true) {
       let timeout
       return function executedFunction() {
@@ -56,6 +46,18 @@ export default {
         timeout = setTimeout(later, wait)
 
         if (callNow) func.apply(context, args)
+      }
+    },
+    throttle(func, wait = 1000) {
+      let time = Date.now()
+      return function executedFunction() {
+        const context = this
+        const args = arguments
+
+        if (time + wait - Date.now() < 0) {
+          func.apply(context, args)
+          time = Date.now()
+        }
       }
     },
   },
