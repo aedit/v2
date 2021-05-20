@@ -19,6 +19,7 @@
     }
 
     &__action {
+      user-select: none;
       button:hover {
         border-color: map-get($color-map, secondary);
       }
@@ -29,5 +30,6 @@
     align-self: center;
     justify-self: center;
     width: 100%;
+    user-select: none;
   }
 }
