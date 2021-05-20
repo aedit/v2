@@ -34,6 +34,10 @@
   display: flex;
 }
 
+.d-inline-flex {
+  display: inline-flex;
+}
+
 .d-flex-column {
   display: flex;
   flex-direction: column;
@@ -41,6 +45,12 @@
 
 .d-flex-center {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-inline-flex-center {
+  display: inline-flex;
   justify-content: center;
   align-items: center;
 }
