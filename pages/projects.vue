@@ -19,7 +19,7 @@
       </div>
       <button
         class="archives-button"
-        @click="$router.push('/project-archives')"
+        @click="$router.push('/projects-archives')"
       >
         Archives
       </button>
