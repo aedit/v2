@@ -57,7 +57,7 @@
         You can fill the form, hit send or whatsapp me. Also, you can reach me
         out on the below social links.
       </h3>
-      <SocialIcons ref="social-icons" class="contact__social mt-9" />
+      <div ref="social-container"></div>
     </div>
   </div>
 </template>
@@ -128,30 +128,26 @@ export default {
       )
     },
     animateSocialIcons() {
-      const socialIcons =
-        this.$refs['social-icons'] && this.$refs['social-icons'].$el
-      if (!socialIcons) {
-        setTimeout(() => {
-          this.animateSocialIcons()
-        }, 100)
-        return
-      }
       const windowWidth = window.innerWidth
       const windowHeight = window.innerHeight
-      const rightPosition =
-        windowWidth - socialIcons.offsetLeft - socialIcons.clientWidth + 'px'
-      const bottomPosition =
-        windowHeight - socialIcons.offsetTop - socialIcons.clientHeight + 'px'
 
-      socialIcons.style.transform = `translate(calc(${rightPosition} - 4rem
-      ), calc(${bottomPosition} - 2rem))`
-      socialIcons.style.opacity = '0'
-      socialIcons.style.transition = 'all .5s ease-in'
+      const containerDiv = this.$refs['social-container']
+      if (!containerDiv) {
+        return
+      }
+      document.documentElement.style.setProperty(
+        '--social-right',
+        windowWidth - containerDiv.offsetLeft + 'px'
+      )
+      document.documentElement.style.setProperty(
+        '--social-bottom',
+        windowHeight - containerDiv.offsetTop + 'px'
+      )
 
-      setTimeout(() => {
-        socialIcons.style.transform = 'translate(0, 0)'
-        socialIcons.style.opacity = '1'
-      }, 500)
+      document.documentElement.style.setProperty(
+        '--social-transform',
+        'translate(50%, calc(50% + 5rem))'
+      )
     },
   },
 }

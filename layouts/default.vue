@@ -8,7 +8,7 @@
       <i v-if="scrollText.up" class="icon-arrow-right ml-2"></i>
     </span>
     <footer>
-      <SocialIcons v-if="showFooter" />
+      <SocialIcons />
     </footer>
     <client-only v-if="stars">
       <Particles class="particles"></Particles>
@@ -49,9 +49,6 @@ export default {
           scrollText.up = true
       }
       return scrollText
-    },
-    showFooter() {
-      return this.$route.path !== '/contact'
     },
   },
   methods: {

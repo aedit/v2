@@ -75,10 +75,8 @@
     align-items: center;
     align-self: flex-start;
 
-    .contact__social {
-      position: unset;
-      opacity: 0;
-      transition: transform 0.001s linear;
+    h1 {
+      align-self: center;
     }
   }
 }
