@@ -91,12 +91,12 @@
         &--techs {
           display: flex;
           gap: 1rem;
+          flex-wrap: wrap;
           span {
             background-color: #ffca8330;
             font-size: 0.8rem;
             border-radius: 3px;
             padding: 0.1rem 0.3rem;
-            flex-wrap: wrap;
             white-space: nowrap;
           }
         }
