@@ -2,7 +2,7 @@
   <div class="def-layout" :class="{ 'no-stars': !stars }">
     <NavBar />
     <Nuxt />
-    <span class="scroll-down">
+    <span :key="scrollText.up && scrollText.down" class="scroll-down">
       <i v-if="scrollText.down" class="icon-arrow-left mr-2"></i>
       <span class="px-2">scroll</span>
       <i v-if="scrollText.up" class="icon-arrow-right ml-2"></i>
