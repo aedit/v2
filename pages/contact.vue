@@ -49,6 +49,7 @@
         You can fill the form, hit send or whatsapp me. Also, you can reach me
         out on the below social links.
       </h3>
+      <SocialIcons ref="social-icons" class="contact__social mt-9" />
     </div>
   </div>
 </template>
@@ -63,6 +64,9 @@ export default {
       contactEmail: '',
       contactMessage: '',
     }
+  },
+  mounted() {
+    this.animateSocialIcons()
   },
   methods: {
     call(evt) {
@@ -79,6 +83,32 @@ export default {
     sendWhatsappMessage() {
       const message = this.prepareMessage()
       window.open(`https://wa.me/919826942288?text=${message}`, '_blank')
+    },
+    animateSocialIcons() {
+      const socialIcons =
+        this.$refs['social-icons'] && this.$refs['social-icons'].$el
+      if (!socialIcons) {
+        setTimeout(() => {
+          this.animateSocialIcons()
+        }, 100)
+        return
+      }
+      const windowWidth = window.innerWidth
+      const windowHeight = window.innerHeight
+      const rightPosition =
+        windowWidth - socialIcons.offsetLeft - socialIcons.clientWidth + 'px'
+      const bottomPosition =
+        windowHeight - socialIcons.offsetTop - socialIcons.clientHeight + 'px'
+
+      socialIcons.style.transform = `translate(calc(${rightPosition} - 4rem
+      ), calc(${bottomPosition} - 2rem))`
+      socialIcons.style.opacity = '0'
+      socialIcons.style.transition = 'all .5s ease-in'
+
+      setTimeout(() => {
+        socialIcons.style.transform = 'translate(0, 0)'
+        socialIcons.style.opacity = '1'
+      }, 500)
     },
   },
 }
