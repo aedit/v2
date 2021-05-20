@@ -30,10 +30,5 @@
 import changeRouteOnScrollMixin from '~/changeRouteOnScrollMixin'
 export default {
   mixins: [changeRouteOnScrollMixin],
-  methods: {
-    log(event) {
-      console.log(event)
-    },
-  },
 }
 </script>
