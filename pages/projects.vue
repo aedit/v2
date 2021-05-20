@@ -61,7 +61,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i class="icon-github"></i>
+                <i class="icon-new-tab"></i>
               </a>
             </div>
           </div>

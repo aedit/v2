@@ -49,6 +49,10 @@
         transition: 0.2s ease top;
       }
     }
+
+    .archives-button {
+      border-bottom: 1px solid map-get($color-map, secondary);
+    }
   }
 
   &__main {
@@ -78,6 +82,12 @@
         justify-content: center;
         padding: 2rem;
 
+        &--title {
+          &:hover {
+            color: map-get($color-map, primary);
+          }
+        }
+
         &--techs {
           display: flex;
           gap: 1rem;
@@ -86,12 +96,18 @@
             font-size: 0.8rem;
             border-radius: 3px;
             padding: 0.1rem 0.3rem;
+            flex-wrap: wrap;
           }
         }
 
         &--actions {
           user-select: none;
           font-size: 2rem;
+          a {
+            &:hover {
+              color: map-get($color-map, primary);
+            }
+          }
         }
       }
     }
