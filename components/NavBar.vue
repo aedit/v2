@@ -9,7 +9,6 @@
       <li><NuxtLink to="/"> Home</NuxtLink></li>
       <li><NuxtLink to="/about"> About</NuxtLink></li>
       <li><NuxtLink to="/projects"> Projects</NuxtLink></li>
-      <li><NuxtLink to="/projects-v1"> Projects OLD</NuxtLink></li>
       <li><NuxtLink to="/contact"> Contact</NuxtLink></li>
       <span ref="selected-indicator" class="selected-indicator"></span>
       <button
@@ -20,9 +19,6 @@
 
         Resume
       </button>
-      <span @click="$emit('star')">
-        <input type="checkbox" checked />
-      </span>
     </ul>
   </nav>
 </template>

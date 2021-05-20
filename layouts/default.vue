@@ -1,6 +1,6 @@
 <template>
   <div class="def-layout" :class="{ 'no-stars': !stars }">
-    <NavBar @star="stars = !stars" />
+    <NavBar />
     <Nuxt />
     <span class="scroll-down">
       <i v-if="scrollText.down" class="icon-arrow-left mr-2"></i>
@@ -10,7 +10,7 @@
     <footer>
       <SocialIcons />
     </footer>
-    <client-only v-if="stars">
+    <client-only>
       <Particles class="particles"></Particles>
     </client-only>
   </div>
