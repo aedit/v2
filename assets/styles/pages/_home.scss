@@ -22,6 +22,9 @@
       user-select: none;
       button:hover {
         border-color: map-get($color-map, secondary);
+        i {
+          color: map-get($color-map, primary);
+        }
       }
     }
   }
