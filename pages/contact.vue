@@ -1,12 +1,13 @@
 <template>
   <div class="contact" @mousewheel="goNextThrottle">
-    <form class="contact__form" autocomplete="off" @submit="call">
+    <form class="contact__form" autocomplete="off" @submit.prevent="sendEmail">
       <div class="contact__form__input mb-6">
         <input
           v-model="contactName"
           required
           type="text"
           placeholder="Your Name"
+          name="from_name"
           autocomplete="false"
         />
       </div>
@@ -15,7 +16,7 @@
           v-model="contactEmail"
           required
           type="email"
-          name=""
+          name="reply_to"
           placeholder="Your Email"
         />
       </div>
@@ -24,6 +25,7 @@
           v-model="contactMessage"
           required
           rows="8"
+          name="message"
           placeholder="Your Message"
         ></textarea>
       </div>
@@ -32,7 +34,13 @@
           id="submit"
           class="border-primary px-9 py-1 rounded fw-400 mr-3"
         >
-          Send
+          <span v-if="sending">Sending</span>
+          <span v-else-if="errorOccurred">Sorry! Errors!</span>
+          <span v-else-if="messageSent">
+            <i class="icon-check color-primary"></i>
+            Message Sent
+          </span>
+          <span v-else>Send</span>
         </button>
         <button
           type="button"
@@ -55,6 +63,8 @@
 </template>
 
 <script>
+import emailjs from 'emailjs-com'
+
 import changeRouteOnScrollMixin from '~/changeRouteOnScrollMixin'
 export default {
   mixins: [changeRouteOnScrollMixin],
@@ -63,14 +73,43 @@ export default {
       contactName: '',
       contactEmail: '',
       contactMessage: '',
+      sending: false,
+      messageSent: false,
+      errorOccurred: false,
     }
+  },
+  watch: {
+    messageSent(newVal) {
+      if (newVal) {
+        setTimeout(() => {
+          this.messageSent = false
+        }, 2000)
+      }
+    },
   },
   mounted() {
     this.animateSocialIcons()
   },
   methods: {
-    call(evt) {
-      evt.preventDefault()
+    sendEmail(evt) {
+      this.sending = true
+      emailjs
+        .sendForm(
+          'service_7k8f36d',
+          'template_dzp5hjl',
+          evt.target,
+          'user_JQ0ez73KKRsdihwaBiUYk'
+        )
+        .then(
+          (result) => {
+            this.sending = false
+            this.messageSent = true
+          },
+          () => {
+            this.sending = false
+            this.errorOccurred = true
+          }
+        )
     },
     prepareMessage() {
       let message = 'Hi Udit,\n'
