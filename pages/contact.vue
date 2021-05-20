@@ -82,7 +82,11 @@ export default {
     },
     sendWhatsappMessage() {
       const message = this.prepareMessage()
-      window.open(`https://wa.me/919826942288?text=${message}`, '_blank')
+      window.open(
+        `https://wa.me/919826942288?text=${message}`,
+        '_blank',
+        'noopener noreferrer'
+      )
     },
     animateSocialIcons() {
       const socialIcons =

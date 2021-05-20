@@ -13,8 +13,11 @@
         >
           Say hello
         </button>
-        <button class="border-primary px-6 py-1 rounded fw-400">
-          Buy Me a coffee
+        <button
+          class="border-primary px-6 py-1 rounded fw-400 d-inline-flex-center"
+          @click="buyMeABeer"
+        >
+          <i class="icon-beer-solid mr-2"></i> Buy Me a beer
         </button>
       </div>
     </div>
@@ -30,5 +33,14 @@
 import changeRouteOnScrollMixin from '~/changeRouteOnScrollMixin'
 export default {
   mixins: [changeRouteOnScrollMixin],
+  methods: {
+    buyMeABeer() {
+      window.open(
+        'https://buymeacoffee.com/aedit',
+        '_blank',
+        'noopener noreferrer'
+      )
+    },
+  },
 }
 </script>
