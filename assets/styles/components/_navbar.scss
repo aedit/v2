@@ -8,7 +8,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 2rem 4rem;
-  .nav-bar__links {
+
+  &__logo {
+    font-size: 1.5rem;
+  }
+
+  &__links {
     gap: 2.5rem;
     display: flex;
     align-items: stretch;
