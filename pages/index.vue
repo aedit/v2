@@ -31,8 +31,14 @@
 
 <script>
 import changeRouteOnScrollMixin from '~/changeRouteOnScrollMixin'
+import headMixin from '~/headMixin'
 export default {
-  mixins: [changeRouteOnScrollMixin],
+  mixins: [changeRouteOnScrollMixin, headMixin],
+  data() {
+    return {
+      title: 'Hi, I am Udit',
+    }
+  },
   methods: {
     buyMeABeer() {
       window.open(

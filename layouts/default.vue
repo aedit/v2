@@ -23,16 +23,6 @@ export default {
       stars: true,
     }
   },
-  head() {
-    return {
-      title: 'Hello',
-      link: [
-        this.checkDark
-          ? { rel: 'icon', type: 'image/x-icon', href: '/favicon-dark.png' }
-          : { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
-      ],
-    }
-  },
   computed: {
     scrollText() {
       const scrollText = {}
@@ -49,11 +39,6 @@ export default {
           scrollText.up = true
       }
       return scrollText
-    },
-  },
-  methods: {
-    checkDark() {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches
     },
   },
 }

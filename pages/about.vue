@@ -20,7 +20,13 @@
 
 <script>
 import changeRouteOnScrollMixin from '~/changeRouteOnScrollMixin'
+import headMixin from '~/headMixin'
 export default {
-  mixins: [changeRouteOnScrollMixin],
+  mixins: [changeRouteOnScrollMixin, headMixin],
+  data() {
+    return {
+      title: 'About Me - aedit',
+    }
+  },
 }
 </script>

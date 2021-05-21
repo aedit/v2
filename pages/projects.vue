@@ -75,8 +75,9 @@
 import projects from '~/assets/scripts/projects'
 import base64 from '~/assets/scripts/image-base64'
 import changeRouteOnScrollMixin from '~/changeRouteOnScrollMixin'
+import headMixin from '~/headMixin'
 export default {
-  mixins: [changeRouteOnScrollMixin],
+  mixins: [changeRouteOnScrollMixin, headMixin],
   beforeRouteEnter(to, from, next) {
     next((vm) => {
       if (from.path === '/contact') vm.defaultIndex = vm.lastProjectIndex
@@ -90,6 +91,7 @@ export default {
       throttleScroll: () => {},
       throttleSelect: () => {},
       defaultIndex: 0,
+      title: 'My Projects - aedit',
     }
   },
   computed: {

@@ -66,8 +66,10 @@
 import emailjs from 'emailjs-com'
 
 import changeRouteOnScrollMixin from '~/changeRouteOnScrollMixin'
+import headMixin from '~/headMixin'
+
 export default {
-  mixins: [changeRouteOnScrollMixin],
+  mixins: [changeRouteOnScrollMixin, headMixin],
   data() {
     return {
       contactName: '',
@@ -76,6 +78,7 @@ export default {
       sending: false,
       messageSent: false,
       errorOccurred: false,
+      title: 'Contact Me - aedit',
     }
   },
   watch: {
