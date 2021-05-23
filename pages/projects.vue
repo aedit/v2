@@ -27,7 +27,7 @@
     <main class="projects__main">
       <transition name="fade">
         <div v-if="showingSelectedProject" class="projects__container">
-          <img class="projects__image" :src="base64" alt="" />
+          <img class="projects__image" :src="selectedProject.image" alt="" />
           <div class="projects__content">
             <a
               :href="selectedProject.projectURL"
@@ -50,6 +50,7 @@
             </div>
             <div class="projects__content--actions">
               <a
+                v-if="selectedProject.githubURL"
                 :href="selectedProject.githubURL"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -57,6 +58,7 @@
                 <i class="icon-github mr-3"></i>
               </a>
               <a
+                v-if="selectedProject.projectURL"
                 :href="selectedProject.projectURL"
                 target="_blank"
                 rel="noopener noreferrer"
