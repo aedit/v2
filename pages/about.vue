@@ -1,20 +1,37 @@
 <template>
   <div class="about" @mousewheel="goNextThrottle">
-    THello! My name is Udit, and I am a Web Developer. The first time I took an
-    interest in the screens on the browser, was in 2010. I started experimenting
-    things by 2018 and started taking it seriously since 2020. My major focus
-    has always been UI Development, and recently I have started devoting some
-    time to the backend side of the web. Currently, I work as a fulltime
-    Software Engineer at Cyware Labs, where I develop the frontend of company's
-    products. I love to take out some time to invest in open source projects,
-    some exciting projects of mine and helping fellow developers around me.
-    <br />
-    Shows I love: Black Mirror, Bojack Horseman, Dark, Love, Death and Robots,
-    Mindhunter, The Boys <br />
-    Music I listen to: Prateek Kuhad, Anuv Jain,
-    <br />
-    Check out my writings here at: agreyguy.wordpress.com
-    <br />
+    <h1><span class="color-primary">Hello!</span></h1>
+    <h2>
+      I am a full stack web developer who enjoys reading and writing when he is
+      not in front of the computer!
+    </h2>
+    <h3 class="mt-2">
+      Challenge me for a game of
+      <a title="Under Construction">
+        <span class="color-primary">minesweeper</span>
+      </a>
+    </h3>
+    <h3 class="mt-2">
+      A collection of technologies, I have heard about:
+      <div class="about-skills my-2">
+        <span>C++</span><span>HTML</span><span>CSS</span><span>JavaScript</span
+        ><span>Python</span><span>Vue.js</span><span>Nuxt.js</span
+        ><span>Next.js</span><span>React</span><span>SCSS</span
+        ><span>Bootstrap</span><span>Node.js</span><span>Express</span
+        ><span>MongoDB</span>
+      </div>
+      (*and work on)
+    </h3>
+    <p class="mt-2">
+      Catch up with my writings at:
+      <a
+        href="http://agreyguy.wordpress.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="color-primary"
+        >agreyguy.wordpress.com</a
+      >
+    </p>
   </div>
 </template>
 

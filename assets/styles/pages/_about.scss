@@ -2,5 +2,50 @@
   height: 100%;
   width: 100%;
   padding: 6rem 15%;
+  padding-top: 8rem;
   display: flex;
+  flex-direction: column;
+
+  &-skills {
+    span {
+      background-color: #ffca8350;
+      font-size: 1rem;
+      border-radius: 3px;
+      padding: 0.1rem 0.3rem;
+      white-space: nowrap;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1rem;
+    grid-template-rows: 50px auto 50px;
+    row-gap: 1rem;
+    grid-template-areas:
+      'game skills'
+      'likes skills'
+      'likes writing';
+
+    &__skills {
+      grid-area: skills;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    &__game {
+      grid-area: game;
+    }
+
+    &__likes {
+      grid-area: likes;
+    }
+
+    &__writing {
+      grid-area: writing;
+    }
+  }
 }
