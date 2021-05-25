@@ -21,15 +21,13 @@
         </button>
       </div>
     </div>
-    <img
-      class="home__image"
-      src="@/assets/images/main.png"
-      alt="Main Page Image"
-    />
+    <img class="home__image" :src="bannerImage" alt="Main Page Image" />
   </main>
 </template>
 
 <script>
+import bannerSVG from '@/assets/images/main.svg'
+import bannerPNG from '@/assets/images/main.png'
 import changeRouteOnScrollMixin from '~/changeRouteOnScrollMixin'
 import headMixin from '~/headMixin'
 export default {
@@ -38,6 +36,11 @@ export default {
     return {
       title: 'Hi, I am Udit',
     }
+  },
+  computed: {
+    bannerImage() {
+      return Math.floor(Math.random() * 100) & 2 ? bannerSVG : bannerPNG
+    },
   },
   methods: {
     buyMeABeer() {
