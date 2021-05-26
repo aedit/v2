@@ -1,5 +1,5 @@
 <template>
-  <div class="projects" @mousewheel="throttleScroll">
+  <div v-touch:swipe="checkSwipe" class="projects" @mousewheel="throttleScroll">
     <nav class="projects__nav">
       <div class="projects__nav__list-container">
         <ul class="projects__nav__list">
@@ -155,6 +155,17 @@ export default {
         return
       }
       this.throttleSelect(this.selectedProjectIndex + (isDownScroll ? 1 : -1))
+    },
+    checkSwipe(swipe) {
+      const isLeftSwipe = swipe === 'left'
+      if (
+        (isLeftSwipe && this.selectedProjectIndex === this.lastProjectIndex) ||
+        (!isLeftSwipe && this.selectedProjectIndex === 0)
+      ) {
+        this.changeRouteOnSwipe(swipe)
+      }
+
+      this.selectItem(this.selectedProjectIndex + (isLeftSwipe ? 1 : -1))
     },
   },
 }

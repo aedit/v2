@@ -28,6 +28,24 @@ export default {
           !isDownScroll && this.$router.push('/projects')
       }
     },
+    changeRouteOnSwipe(swipe) {
+      const isLeftSwipe = swipe === 'left'
+      switch (this.$route.path) {
+        case '/':
+          isLeftSwipe && this.$router.push('/about')
+          return
+        case '/about':
+          isLeftSwipe ? this.$router.push('/projects') : this.$router.push('/')
+          return
+        case '/projects':
+          isLeftSwipe
+            ? this.$router.push('/contact')
+            : this.$router.push('/about')
+          return
+        case '/contact':
+          !isLeftSwipe && this.$router.push('/projects')
+      }
+    },
     debounce(func, wait = 1000, immediate = true) {
       let timeout
       return function executedFunction() {

@@ -1,5 +1,9 @@
 <template>
-  <main class="home" @mousewheel="goNextThrottle">
+  <main
+    v-touch:swipe="changeRouteOnSwipe"
+    class="home"
+    @mousewheel="goNextThrottle"
+  >
     <div class="home__content">
       <h2 class="fw-400 mb-2">Hey, I'm Udit, a</h2>
       <h1 class="color-primary home__content__name">Web Developer.</h1>

@@ -1,5 +1,9 @@
 <template>
-  <div class="about" @mousewheel="goNextThrottle">
+  <div
+    v-touch:swipe="changeRouteOnSwipe"
+    class="about"
+    @mousewheel="goNextThrottle"
+  >
     <h1 class="about__head">
       <a
         href="http://goodreads.com/aedit"
