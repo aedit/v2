@@ -5,6 +5,10 @@
         <span class="color-primary fw-600">UDIT</span> SEN
       </NuxtLink>
     </span>
+    <span class="nav-bar__menu-icon" @click="showMenu = !showMenu">
+      <i v-if="showMenu" class="icon-cross"></i>
+      <i v-else class="icon-menu"></i>
+    </span>
     <ul class="nav-bar__links">
       <li><NuxtLink to="/"> Home</NuxtLink></li>
       <li><NuxtLink to="/about"> About</NuxtLink></li>
@@ -20,12 +24,29 @@
         Resume
       </button>
     </ul>
+    <transition name="menu">
+      <ul class="nav-bar__mobile-menu" :class="{ open: showMenu }">
+        <li><NuxtLink to="/"> Home</NuxtLink></li>
+        <li><NuxtLink to="/about"> About</NuxtLink></li>
+        <li><NuxtLink to="/projects"> Projects</NuxtLink></li>
+        <li><NuxtLink to="/contact"> Contact</NuxtLink></li>
+        <li @click="openResume">Resume</li>
+
+        <SocialIcons class="menu-social" />
+      </ul>
+    </transition>
   </nav>
 </template>
 <script>
 export default {
+  data() {
+    return {
+      showMenu: false,
+    }
+  },
   watch: {
     $route() {
+      this.showMenu = false
       this.$nextTick(() => this.resetIndicator())
     },
   },

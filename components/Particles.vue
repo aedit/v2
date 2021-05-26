@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss">
 #particles-js {
-  z-index: -1;
+  z-index: -5;
   position: fixed;
   top: 0;
   left: 0;

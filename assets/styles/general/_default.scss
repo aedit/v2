@@ -63,3 +63,21 @@ button {
   transition: all 0.3s ease-in-out;
   user-select: none;
 }
+
+.page-wrapper {
+  height: 100%;
+  width: 100%;
+  padding: 6rem 15%;
+}
+
+@media screen and (max-width: 1024px) {
+  .page-wrapper {
+    padding: 6rem 8%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .page-wrapper {
+    padding: 4rem 2%;
+  }
+}

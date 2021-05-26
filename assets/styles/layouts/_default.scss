@@ -53,4 +53,16 @@
       }
     }
   }
+
+  @media screen and (max-width: 1024px) {
+    .scroll-down {
+      left: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 770px) {
+    .scroll-down {
+      display: none;
+    }
+  }
 }

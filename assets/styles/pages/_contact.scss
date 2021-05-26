@@ -1,7 +1,6 @@
 .contact {
-  height: 100%;
-  width: 100%;
-  padding: 6rem 15%;
+  @extend .page-wrapper;
+
   display: flex;
   align-items: center;
 
@@ -77,6 +76,33 @@
 
     h1 {
       align-self: center;
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .contact {
+    flex-direction: column-reverse;
+    justify-content: space-around;
+
+    &__form {
+      width: 90%;
+      flex: 1;
+
+      &__actions {
+        button {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+      }
+    }
+
+    &__content {
+      margin: 1rem auto;
+      flex: content;
+      h3 {
+        display: none;
+      }
     }
   }
 }

@@ -131,6 +131,7 @@ export default {
       )
     },
     animateSocialIcons() {
+      if (window.innerWidth < 770) return
       const windowWidth = window.innerWidth
       const windowHeight = window.innerHeight
 

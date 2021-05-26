@@ -30,3 +30,12 @@
   opacity: 0;
   transform: scale(0.8);
 }
+
+.menu-enter-active {
+  transform: all 10s ease;
+}
+
+.menu-enter-to,
+.menu-leave-to {
+  transform: translateY(-100%) !important;
+}

@@ -1,7 +1,6 @@
 .about {
-  height: 100%;
-  width: 100%;
-  padding: 8rem 15%;
+  @extend .page-wrapper;
+
   padding-top: 7rem;
   display: flex;
   flex-direction: column;
@@ -45,6 +44,31 @@
   &__footer {
     span {
       text-decoration: underline;
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .about {
+    padding-top: 4rem;
+
+    &__head {
+      font-size: 1.2rem;
+    }
+
+    &__main {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 1rem;
+      font-size: 0.8rem;
+
+      &__image {
+        border-width: 20px;
+      }
+    }
+
+    &__footer {
+      font-size: 0.8rem;
     }
   }
 }
