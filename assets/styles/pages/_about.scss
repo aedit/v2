@@ -59,6 +59,7 @@
     &__main {
       display: flex;
       flex-direction: column-reverse;
+      justify-content: space-evenly;
       gap: 1rem;
       font-size: 0.8rem;
 

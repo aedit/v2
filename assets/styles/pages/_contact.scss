@@ -83,11 +83,10 @@
 @media screen and (max-width: 770px) {
   .contact {
     flex-direction: column-reverse;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     &__form {
       width: 90%;
-      flex: 1;
 
       &__actions {
         button {
@@ -99,7 +98,7 @@
 
     &__content {
       margin: 1rem auto;
-      flex: content;
+      flex: unset;
       h3 {
         display: none;
       }
