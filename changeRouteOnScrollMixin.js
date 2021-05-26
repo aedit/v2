@@ -12,38 +12,25 @@ export default {
   methods: {
     changeRoute(e) {
       const isDownScroll = e.wheelDeltaY < 0
-      switch (this.$route.path) {
-        case '/':
-          isDownScroll && this.$router.push('/about')
-          return
-        case '/about':
-          isDownScroll ? this.$router.push('/projects') : this.$router.push('/')
-          return
-        case '/projects':
-          isDownScroll
-            ? this.$router.push('/contact')
-            : this.$router.push('/about')
-          return
-        case '/contact':
-          !isDownScroll && this.$router.push('/projects')
-      }
+      this.routePush(isDownScroll)
     },
     changeRouteOnSwipe(swipe) {
       const isLeftSwipe = swipe === 'left'
-      switch (this.$route.path) {
-        case '/':
-          isLeftSwipe && this.$router.push('/about')
+      this.routePush(isLeftSwipe)
+    },
+    routePush(check) {
+      switch (this.$route.name) {
+        case 'index':
+          check && this.$router.push('/about')
           return
-        case '/about':
-          isLeftSwipe ? this.$router.push('/projects') : this.$router.push('/')
+        case 'about':
+          check ? this.$router.push('/projects') : this.$router.push('/')
           return
-        case '/projects':
-          isLeftSwipe
-            ? this.$router.push('/contact')
-            : this.$router.push('/about')
+        case 'projects':
+          check ? this.$router.push('/contact') : this.$router.push('/about')
           return
-        case '/contact':
-          !isLeftSwipe && this.$router.push('/projects')
+        case 'contact':
+          !check && this.$router.push('/projects')
       }
     },
     debounce(func, wait = 1000, immediate = true) {

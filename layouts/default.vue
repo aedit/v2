@@ -34,16 +34,16 @@ export default {
   computed: {
     scrollText() {
       const scrollText = {}
-      switch (this.$route.path) {
-        case '/':
+      switch (this.$route.name) {
+        case 'index':
           scrollText.down = true
           break
-        case '/projects':
-        case '/about':
+        case 'projects':
+        case 'about':
           scrollText.down = true
           scrollText.up = true
           break
-        case '/contact':
+        case 'contact':
           scrollText.up = true
       }
       return scrollText
