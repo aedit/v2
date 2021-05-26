@@ -163,6 +163,7 @@ export default {
         (!isLeftSwipe && this.selectedProjectIndex === 0)
       ) {
         this.changeRouteOnSwipe(swipe)
+        return
       }
 
       this.selectItem(this.selectedProjectIndex + (isLeftSwipe ? 1 : -1))
