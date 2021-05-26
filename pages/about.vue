@@ -36,7 +36,10 @@
         </p>
         <p>
           I am always open to work on some cool and exciting ideas. Feel free to
-          <span class="color-primary pointer" @click="$router.push('/contact')">
+          <span
+            class="color-primary pointer underline"
+            @click="$router.push('/contact')"
+          >
             involve me </span
           >!
         </p>
