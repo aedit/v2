@@ -1,21 +1,25 @@
 <template>
   <main class="home" @mousewheel="goNextThrottle">
     <div class="home__content">
-      <h2 class="fw-400">Hello, I'm</h2>
-      <h1 class="color-primary home__content__name">Udit Sen</h1>
-      <h2 class="home__content__head mb-6">I turn thoughts into code!</h2>
+      <h2 class="fw-400">Hey, I'm Udit, a</h2>
+      <h1 class="color-primary home__content__name">Web Developer.</h1>
+      <h1 class="color-primary home__content__name">Programmer. Writer.</h1>
+
+      <h2 class="home__content__head mb-6">
+        I turn thoughts into binary || ink
+      </h2>
       <div class="home__content__action">
-        <button
-          class="border-primary px-9 py-1 rounded fw-400 mr-2"
-          @click="$router.push('/contact')"
-        >
-          Say hello
-        </button>
         <button
           class="border-primary px-6 py-1 rounded fw-400 d-inline-flex-center"
           @click="buyMeABeer"
         >
-          <i class="icon-beer-solid mr-2"></i> Buy Me a beer
+          Buy Me a Beer <i class="icon-beer ml-1"></i>
+        </button>
+        <button
+          class="border-primary px-9 py-1 rounded fw-400 ml-2"
+          @click="$router.push('/contact')"
+        >
+          Say hello
         </button>
       </div>
     </div>

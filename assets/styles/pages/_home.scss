@@ -10,17 +10,23 @@
     justify-content: center;
 
     &__name {
-      font-size: 5rem;
+      font-size: 2.5rem;
       text-transform: uppercase;
     }
 
     &__head {
       opacity: 0.9;
-      font-size: 2rem;
+      font-size: 1.7rem;
     }
 
     &__action {
       user-select: none;
+      display: flex;
+      button {
+        i {
+          font-size: 1.7rem;
+        }
+      }
       button:hover {
         border-color: map-get($color-map, secondary);
         i {
