@@ -1,5 +1,5 @@
 <template>
-  <main v-touch:swipe="doSomething" class="home" @mousewheel="goNextThrottle">
+  <main class="home" @mousewheel="goNextThrottle">
     <div class="home__content">
       <h2 class="fw-400 mb-2">Hey, I'm Udit, a</h2>
       <h1 class="color-primary home__content__name">Web Developer.</h1>
@@ -17,7 +17,7 @@
           class="border-primary px-9 py-1 rounded fw-400 ml-2"
           @click="$router.push('/contact')"
         >
-          {{ testCOntent }}
+          Say hello
         </button>
       </div>
     </div>
@@ -35,7 +35,6 @@ export default {
   data() {
     return {
       title: 'Hi, I am Udit',
-      testContent: 'heyfdhfnkfjdns',
     }
   },
   computed: {
@@ -50,9 +49,6 @@ export default {
         '_blank',
         'noopener noreferrer'
       )
-    },
-    doSomething() {
-      this.testContent = 'Say hello'
     },
   },
 }

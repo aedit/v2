@@ -2,15 +2,18 @@
   <div class="def-layout" :class="{ 'no-stars': !stars }">
     <NavBar />
     <Nuxt />
-    <span :key="scrollText.up && scrollText.down" class="scroll-down">
+    <span
+      :key="'scroll' + (scrollText.up && scrollText.down)"
+      class="scroll-down"
+    >
       <i v-if="scrollText.down" class="icon-arrow-left mr-2"></i>
       <span class="px-2">scroll</span>
       <i v-if="scrollText.up" class="icon-arrow-right ml-2"></i>
     </span>
-    <span :key="scrollText.up && scrollText.down" class="swipe">
-      <i v-if="scrollText.up" class="icon-arrow-left mr-2"></i>
+    <span :key="'swipe' + (scrollText.up && scrollText.down)" class="swipe">
+      <i v-if="scrollText.down" class="icon-arrow-left mr-2"></i>
       <span class="px-2">swipe</span>
-      <i v-if="scrollText.down" class="icon-arrow-right ml-2"></i>
+      <i v-if="scrollText.up" class="icon-arrow-right ml-2"></i>
     </span>
     <footer>
       <SocialIcons />
