@@ -55,6 +55,11 @@
     }
   }
 
+  &__num {
+    display: none;
+    text-align: center;
+  }
+
   &__main {
     flex: 1;
     display: flex;
@@ -112,6 +117,42 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .projects {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+
+    &__nav {
+      display: none;
+    }
+
+    &__num {
+      display: block;
+    }
+
+    &__main {
+      .projects__container {
+        margin: 0;
+        height: 70%;
+
+        .projects__content {
+          justify-content: space-evenly;
+          &--title {
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      .projects__image {
+        height: 100%;
+        overflow: hidden;
+        object-fit: cover;
       }
     }
   }

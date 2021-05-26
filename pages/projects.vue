@@ -17,13 +17,17 @@
           ></span>
         </ul>
       </div>
-      <button
+      <!-- <button
         class="archives-button"
         @click="$router.push('/projects-archives')"
       >
         Archives
-      </button>
+      </button> -->
     </nav>
+    <h1 class="projects__num">
+      <span class="color-primary">0{{ selectedProjectIndex + 1 }}</span>
+      / 0{{ lastProjectIndex + 1 }}
+    </h1>
     <main class="projects__main">
       <transition name="fade">
         <div v-if="showingSelectedProject" class="projects__container">
