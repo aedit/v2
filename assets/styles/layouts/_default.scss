@@ -59,6 +59,7 @@
     bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
+    z-index: -1;
 
     .icon-arrow-left {
       position: absolute;
