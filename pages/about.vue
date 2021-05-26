@@ -1,7 +1,57 @@
 <template>
   <div class="about" @mousewheel="goNextThrottle">
-    <h1><span class="color-primary">Hello!</span></h1>
-    <h2>
+    <h1 class="about__head">
+      <a
+        href="http://goodreads.com/aedit"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="color-primary">I read!</span>
+      </a>
+      <span class="color-primary">I code!</span>
+      <a
+        href="http://agreyguy.wordpress.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="color-primary">I write!</span>
+      </a>
+    </h1>
+    <main class="about__main mt-3">
+      <section class="about__main__content">
+        <p>
+          Hello, World! <br />
+          My name is <span class="color-primary">Udit Sen</span>.
+        </p>
+        <p>
+          I currently work as a frontend developer at Cyware Labs, a
+          cyber-security based startup, from Bangalore, India.
+        </p>
+        <p>
+          My skills include <span class="color-primary">Vue.js</span>,
+          <span class="color-primary">React.js</span> and
+          <span class="color-primary">HTML, CSS and JavaScript</span>. I keep on
+          trying my hands at new things, and I am currently exploring
+          <span class="color-primary">Node.js</span>
+        </p>
+        <p>
+          I am always open to work on some cool and exciting ideas. Feel free to
+          <span class="color-primary pointer" @click="$router.push('/contact')">
+            involve me </span
+          >!
+        </p>
+      </section>
+      <img class="about__main__image" src="@/assets/images/me.jpg" alt="" />
+    </main>
+
+    <section class="about__footer">
+      Or, challenge me for a game of
+      <a title="I am developing it :)"
+        ><span class="color-primary">Minesweeper</span></a
+      >
+    </section>
+
+    <!-- <h2>
       I am a full stack web developer who enjoys reading and writing when he is
       not in front of the computer!
     </h2>
@@ -31,7 +81,7 @@
         class="color-primary"
         >agreyguy.wordpress.com</a
       >
-    </p>
+    </p> -->
   </div>
 </template>
 
@@ -44,6 +94,11 @@ export default {
     return {
       title: 'About Me - aedit',
     }
+  },
+  computed: {
+    text() {
+      return 'frontend developer'
+    },
   },
 }
 </script>
