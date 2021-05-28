@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: '%s Udit Sen',
+    title: 'Udit Sen',
     htmlAttrs: {
       lang: 'en',
     },
