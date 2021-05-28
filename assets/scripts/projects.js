@@ -9,6 +9,14 @@ export default [
     projectURL: 'https://gdg-cloud-indore.github.io/newsletters/',
   },
   {
+    title: 'Portfolio V2',
+    image: '/projects/v2.png',
+    description: 'Version 2 and Current version of the portfolio website',
+    techs: ['Nuxt.js', 'Vue.js', 'JavaScript', 'SCSS', 'HTML'],
+    githubURL: 'https://github.com/aedit/aedit.github.io',
+    projectURL: 'https://aedit.me/',
+  },
+  {
     title: 'Hover Games',
     image: '/projects/hover-games.png',
     description:
@@ -57,7 +65,6 @@ export default [
     description:
       'Open API based recommender interface. You can search through Books, Movies, Shows and Music and recommend them all to the person with just few clicks',
     techs: ['Open APIs', 'React', 'REST APIs', 'CSS'],
-
     projectURL: 'https://utellme.vercel.app/',
   },
 ]
