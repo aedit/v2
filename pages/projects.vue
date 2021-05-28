@@ -86,7 +86,18 @@ export default {
   mixins: [changeRouteOnScrollMixin, headMixin],
   beforeRouteEnter(to, from, next) {
     next((vm) => {
-      if (from.path === '/contact') vm.defaultIndex = vm.lastProjectIndex
+      if (from.name === 'contact') vm.defaultIndex = vm.lastProjectIndex
+      const id = to.query.id
+      vm.defaultIndex =
+        vm.defaultIndex === vm.lastProjectIndex
+          ? vm.defaultIndex
+          : id
+          ? id - 1
+          : 0
+
+      if (vm.defaultIndex >= 0 && vm.defaultIndex <= vm.lastProjectIndex)
+        vm.selectItem(vm.defaultIndex, true)
+      else return vm.$nuxt.error({ statusCode: 404 })
     })
   },
   data() {
@@ -96,7 +107,7 @@ export default {
       showingSelectedProject: false,
       throttleScroll: () => {},
       throttleSelect: () => {},
-      defaultIndex: 0,
+      defaultIndex: null,
       title: 'My Projects - aedit',
     }
   },
@@ -115,7 +126,6 @@ export default {
     },
   },
   mounted() {
-    this.selectItem(this.defaultIndex, true)
     this.throttleSelect = this.throttle(this.selectItem)
     this.throttleScroll = this.throttle(this.checkScroll)
   },
