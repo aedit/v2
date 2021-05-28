@@ -17,3 +17,11 @@
     text-align: center;
   }
 }
+
+.error ~ .swipe {
+  display: none;
+}
+
+.error ~ .scroll-down {
+  display: none;
+}

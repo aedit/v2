@@ -8,3 +8,24 @@
     </span>
   </div>
 </template>
+
+<script>
+import headMixin from '@/headMixin'
+
+export default {
+  mixins: [headMixin],
+  props: {
+    error: {
+      type: Object,
+      default: () => ({
+        message: 'Not Found',
+      }),
+    },
+  },
+  data() {
+    return {
+      title: this.error.message,
+    }
+  },
+}
+</script>

@@ -97,7 +97,8 @@ export default {
 
       if (vm.defaultIndex >= 0 && vm.defaultIndex <= vm.lastProjectIndex)
         vm.selectItem(vm.defaultIndex, true)
-      else return vm.$nuxt.error({ statusCode: 404 })
+      else
+        return vm.$nuxt.error({ statusCode: 404, message: 'Project Not Found' })
     })
   },
   data() {
