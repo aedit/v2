@@ -28,15 +28,16 @@
           My name is <span class="color-primary">Udit Sen</span>.
         </p>
         <p>
-          I currently work as a frontend developer at Cyware Labs, a
+          I currently work as a frontend developer at CommerceIQ, a
           cyber-security based startup, from Bangalore, India.
         </p>
         <p>
           My skills include <span class="color-primary">Vue.js</span>,
-          <span class="color-primary">React.js</span> and
+          <span class="color-primary">React.js</span>,
+          <span class="color-primary">Node.js</span> and
           <span class="color-primary">HTML, CSS and JavaScript</span>. I keep on
-          trying my hands at new things, and I am currently exploring
-          <span class="color-primary">Node.js</span>
+          trying my hands at new stacks and things, and I am currently exploring
+          <span class="color-primary">Backend Development</span>
         </p>
         <p>
           I am always open to work on some cool and exciting ideas. Feel free to
