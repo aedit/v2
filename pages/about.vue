@@ -28,8 +28,8 @@
           My name is <span class="color-primary">Udit Sen</span>.
         </p>
         <p>
-          I currently work as a frontend developer at CommerceIQ, a
-          cyber-security based startup, from Bangalore, India.
+          I currently work as a frontend developer at CommerceIQ in Bangalore,
+          India.
         </p>
         <p>
           My skills include <span class="color-primary">Vue.js</span>,
