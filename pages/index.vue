@@ -38,7 +38,7 @@ export default {
   mixins: [changeRouteOnScrollMixin, headMixin],
   data() {
     return {
-      title: 'Hi, I am Udit',
+      title: 'Hi, I am Udit Sen | Full-Stack Developer',
     }
   },
   computed: {
