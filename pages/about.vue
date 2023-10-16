@@ -28,8 +28,8 @@
           My name is <span class="color-primary">Udit Sen</span>.
         </p>
         <p>
-          I currently work as a frontend developer at CommerceIQ in Bangalore,
-          India.
+          I work as a SDE 2 at Shipbob. When not working, I organize events with
+          GDG Indore and GDG Cloud Indore.
         </p>
         <p>
           My skills include <span class="color-primary">Vue.js</span>,
@@ -54,9 +54,9 @@
 
     <section class="about__footer">
       Or, challenge me for a game of
-      <a title="I am developing it :)"
-        ><span class="color-primary">Minesweeper</span></a
-      >
+      <a title="I am developing it :)">
+        <span class="color-primary">Minesweeper</span>
+      </a>
     </section>
 
     <!-- <h2>
