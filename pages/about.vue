@@ -28,15 +28,16 @@
           My name is <span class="color-primary">Udit Sen</span>.
         </p>
         <p>
-          I work as a SDE 2 at Shipbob. When not working, I organize events with
+          I am a Frontend Developer. When not working, I organize events with
           GDG Indore and GDG Cloud Indore.
         </p>
         <p>
           My skills include <span class="color-primary">Vue.js</span>,
           <span class="color-primary">React.js</span>,
           <span class="color-primary">Node.js</span> and
-          <span class="color-primary">HTML, CSS and JavaScript</span>. I keep on
-          trying my hands at new stacks and things, and I am currently exploring
+          <span class="color-primary">HTML, CSS, JavaScript and Typescript</span
+          >. I keep on trying my hands at new stacks and things, and I am
+          currently exploring
           <span class="color-primary">Backend Development</span>
         </p>
         <p>
@@ -49,7 +50,11 @@
           >!
         </p>
       </section>
-      <img class="about__main__image" src="@/assets/images/me.jpg" alt="" />
+      <img
+        class="about__main__image"
+        src="https://cdn.jsdelivr.net/gh/aedit/cdn-files@master/portfolio/images/me.jpg"
+        alt=""
+      />
     </main>
 
     <section class="about__footer">

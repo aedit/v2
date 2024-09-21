@@ -30,10 +30,14 @@
 </template>
 
 <script>
-import bannerSVG from '@/assets/images/main.svg'
-import bannerPNG from '@/assets/images/main.png'
 import changeRouteOnScrollMixin from '~/changeRouteOnScrollMixin'
 import headMixin from '~/headMixin'
+
+const bannerPNG =
+  'https://cdn.jsdelivr.net/gh/aedit/cdn-files@master/portfolio/images/main.png'
+const bannerSVG =
+  'https://cdn.jsdelivr.net/gh/aedit/cdn-files@master/portfolio/images/main.svg'
+
 export default {
   mixins: [changeRouteOnScrollMixin, headMixin],
   data() {
