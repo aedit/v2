@@ -28,8 +28,8 @@
           My name is <span class="color-primary">Udit Sen</span>.
         </p>
         <p>
-          I am a Frontend Developer. When not working, I organize events with
-          GDG Indore and GDG Cloud Indore.
+          I am a Senior UI Engineer @ EclecticIQ. When not working, I organize
+          events with GDG Indore and GDG Cloud Indore.
         </p>
         <p>
           My skills include <span class="color-primary">Vue.js</span>,
